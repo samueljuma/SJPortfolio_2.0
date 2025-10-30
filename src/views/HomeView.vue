@@ -196,8 +196,7 @@ const techStack = [
   {
     name: "Jetpack Compose",
     desc: "Declarative UI for sleek, reactive Android UIs.",
-    image: new URL("../assets/techstack/jetpack_logo.png", import.meta.url)
-      .href,
+    image: new URL("../assets/techstack/jetpack_logo.png", import.meta.url).href,
   },
   {
     name: "MVVM Architecture",
