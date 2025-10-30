@@ -191,7 +191,7 @@ const techStack = [
   {
     name: "Kotlin",
     desc: "Modern, expressive & my go-to for Android dev.",
-    image: new URL("../assets/techstack/kotlin_logo.png", import.meta.url).href,
+    image: new URL("../assets/techstack/kotlin_lg.png", import.meta.url).href,
   },
   {
     name: "Jetpack Compose",
@@ -202,7 +202,7 @@ const techStack = [
     name: "MVVM Architecture",
     desc: "Separation of concerns + DI for scalable apps.",
     icon: ["fas", "cubes"],
-    image: new URL("../assets/techstack/kotlin_logo.png", import.meta.url).href,
+    image: new URL("../assets/techstack/kotlin_lg.png", import.meta.url).href,
   },
   {
     name: "Ktor",
@@ -224,13 +224,13 @@ const techStack = [
     name: "Room & DataStore",
     desc: "Local storage that works seamlessly.",
     icon: ["fas", "database"],
-    image: new URL("../assets/techstack/kotlin_logo.png", import.meta.url).href,
+    image: new URL("../assets/techstack/kotlin_lg.png", import.meta.url).href,
   },
   {
     name: "GitHub Actions",
     desc: "CI/CD pipelines for smooth deployments.",
     icon: ["fab", "github"],
-    image: new URL("../assets/techstack/kotlin_logo.png", import.meta.url).href,
+    image: new URL("../assets/techstack/kotlin_lg.png", import.meta.url).href,
   },
 ];
 </script>
