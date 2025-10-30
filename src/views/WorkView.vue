@@ -73,12 +73,11 @@ onMounted(() => {
 
 const placeholderImage = "https://via.placeholder.com/600x400?text=Project+Preview";
 
-
 const projects = ref([
   {
     id: 1,
     title: "GMS",
-    image: "https://res.cloudinary.com/du1q1vzeu/image/upload/v1761727009/gms_fg_ywbaqe.png",
+    image: new URL ('../assets/projects/gms_fg.png', import.meta.url).href,
     description:
       "GMS (Gym Management System) is a powerful mobile tool built for gym Admins and Trainers to efficiently manage daily gym operations. From user records to payment tracking and attendance logs, GMS helps streamline your workflows — all from your phone.",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.samueljuma.gmsmobile",

@@ -18,9 +18,6 @@
           <p class="mt-4">
             I follow clean architecture, <strong>MVVM</strong> patterns, and solid design principles like <strong>DRY</strong> to ensure scalable, maintainable codebases. I also integrate RESTful APIs seamlessly and optimize performance using <strong>Kotlin Coroutines</strong> and dependency injection with <strong>Ktor</strong>.
           </p>
-          <p class="mt-4">
-            🚀 Currently shaping the future of African transit at <strong>BuuPass</strong>, where I turn product ideas into fast, scalable, and intuitive mobile experiences through modularization and automated CI/CD pipelines.
-          </p>
           <p class="mt-4 italic text-sm text-sky-400">
             Architecture nerd. Battery optimizer. Clean code advocate.
           </p>
@@ -89,10 +86,10 @@ const experiences = [
     company: 'BuuPass Inc.',
     role: 'Mobile Engineer',
     period: 'Jul 2024 – Present',
-    description: 'Built a mobile ticketing POS system, optimized legacy code (25% fewer crashes), and improved app performance by 30%.',
+    description: 'Built a mobile ticketing systems, optimized legacy code (25% fewer crashes), and improved app performance by 30%.',
   },
   {
-    company: 'JCraftSolutions',
+    company: 'PhillQins Hub',
     role: 'Software Engineer',
     period: 'May 2024 – Jul 2024',
     description: ' Responsible for architecting clean, maintainable codebases, integrating APIs, and delivering apps from concept to deployment.',
