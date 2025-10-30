@@ -16,7 +16,7 @@
            With <strong>3+ years</strong> of experience, I design and build high-quality, production-ready mobile apps using <strong>Kotlin</strong>, <strong>Jetpack Compose</strong>, and the full <strong>Jetpack</strong> suite.
           </p>
           <p class="mt-4">
-            I follow clean architecture, <strong>MVVM</strong> patterns, and solid design principles like <strong>DRY</strong> to ensure scalable, maintainable codebases. I also integrate RESTful APIs seamlessly and optimize performance using <strong>Kotlin Coroutines</strong> and dependency injection with <strong>Ktor</strong>.
+            I follow clean architecture, <strong>MVVM</strong> patterns, and solid design principles to ensure scalable, maintainable codebases. I also integrate RESTful APIs seamlessly and optimize performance using <strong>Kotlin Coroutines</strong> and dependency injection with <strong>Ktor</strong>.
           </p>
           <p class="mt-4 italic text-sm text-sky-400">
             Architecture nerd. Battery optimizer. Clean code advocate.

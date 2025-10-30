@@ -46,7 +46,7 @@
             I’m a Native Android Engineer with 3+ years of experience designing
             and building high-quality, production-ready mobile applications
             using Kotlin. My approach to development combines clean
-            architecture, MVVM, and robust design principles like DRY — ensuring
+            architecture, MVVM, and robust design principles ensuring
             every project is scalable and maintainable.
           </p>
           <p class="mt-4 text-lg leading-relaxed">
