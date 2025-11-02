@@ -9,8 +9,7 @@
           👋 Hi, I'm <span class="text-sky-500">Samuel Juma</span>
         </h1>
         <p class="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto mb-6">
-          A Native Android Engineer building smooth Kotlin apps with Compose, Clean
-          Architecture & performance-driven code.
+          A Mobile Engineer building smooth and high-performance Kotlin apps for the Android platform.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <button
