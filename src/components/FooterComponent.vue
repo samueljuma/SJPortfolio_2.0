@@ -40,10 +40,13 @@
 
         <!-- Socials -->
         <div class="mt-6">
-          <h4 class="text-sky-500 text-sm font-semibold mb-2">Social Links</h4>
+          <h4 class="text-sky-500 text-sm font-semibold mb-2">Let's Connect</h4>
           <div class="flex items-center space-x-4">
             <a href="https://linkedin.com/in/samueljuma/" target="_blank" aria-label="LinkedIn">
               <font-awesome-icon :icon="['fab', 'linkedin-in']" class="text-sky-500 text-xl hover:scale-110 transition" />
+            </a>
+            <a href="https://github.com/samueljuma" target="_blank" aria-label="Twitter">
+              <font-awesome-icon :icon="['fab', 'github']" class="text-sky-500 text-xl hover:scale-110 transition" />
             </a>
             <a href="https://wa.me/254798114462" target="_blank" aria-label="WhatsApp">
               <font-awesome-icon :icon="['fab', 'whatsapp']" class="text-sky-500 text-xl hover:scale-110 transition" />
@@ -51,6 +54,7 @@
             <a href="https://x.com/_jumasamuel" target="_blank" aria-label="Twitter">
               <font-awesome-icon :icon="['fab', 'x-twitter']" class="text-sky-500 text-xl hover:scale-110 transition" />
             </a>
+            
           </div>
         </div>
       </div>
