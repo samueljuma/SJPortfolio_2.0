@@ -10,7 +10,7 @@
       />
       <div class="text-white text-lg leading-relaxed">
         <p>
-        👋 Hi, I'm <strong>Samuel Juma</strong> — an Android Engineer based in Nairobi, Kenya.
+        👋 Hi,<strong>Samuel Juma</strong> here — an Android Engineer based in Nairobi, Kenya.
         </p>
           <p class="mt-4">
            With <strong>5 years</strong> of experience, I build and ship production Kotlin applications in <strong>fintech, insurtech and mobility</strong>, using <strong>Kotlin</strong>, <strong>Jetpack Compose</strong>, and the full <strong>Jetpack</strong> suite. I'm currently an Android Engineer at <strong>bolttech</strong>.

@@ -6,7 +6,7 @@
     >
       <div class="container mx-auto px-4">
         <h1 class="text-5xl sm:text-6xl font-extrabold mb-4 leading-tight">
-          👋 Hi, I'm <span class="text-sky-500">Samuel Juma</span>
+          👋 Hi, <span class="text-sky-500">Samuel Juma</span> here.
         </h1>
         <p class="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto mb-10">
            Android Engineer with 5 years shipping production Kotlin apps in fintech, insurtech & mobility.

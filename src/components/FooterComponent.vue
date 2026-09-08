@@ -5,7 +5,7 @@
       <div>
         <h3 class="text-sky-500 text-xl font-bold mb-4">About Me</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
-          I'm Samuel Juma — an Android Engineer with 5 years shipping production Kotlin apps in fintech, insurtech and mobility, currently at bolttech. I build with Jetpack Compose, Clean Architecture and MVI, focused on performance, scalability, and maintainability.
+          Call me Samuel Juma — an Android Engineer with 5 years shipping production Kotlin apps in fintech, insurtech and mobility, currently at bolttech. I build with Jetpack Compose, Clean Architecture and MVI, focused on performance, scalability, and maintainability.
         </p>
       </div>
 
