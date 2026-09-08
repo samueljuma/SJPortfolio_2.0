@@ -16,7 +16,7 @@
             @click="goToServicePage"
             class="bg-sky-500 hover:bg-sky-600 px-6 py-3 rounded-full font-semibold shadow-lg transition duration-300 hover:scale-105"
           >
-            🚀 View My Work
+            View My Work
           </button>
           <a
             href="/resume.pdf"

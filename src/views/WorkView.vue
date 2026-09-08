@@ -2,7 +2,7 @@
   <section class="bg-gray-950 text-white py-20 px-6">
     <div class="max-w-7xl mx-auto" data-aos="fade-up">
       <h2 class="text-4xl font-bold text-center mb-6 text-white" data-aos="fade-down">
-        🚀 Featured Projects
+        Featured Projects
       </h2>
       <p class="text-center max-w-3xl mx-auto text-gray-400 mb-14 text-lg" data-aos="fade-up" data-aos-delay="150">
         Explore some of the mobile apps I’ve built — carefully engineered with clean architecture, performance tuning, and intuitive UI/UX that users love.
