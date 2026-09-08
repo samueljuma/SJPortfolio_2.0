@@ -9,7 +9,7 @@
           👋 Hi, I'm <span class="text-sky-500">Samuel Juma</span>
         </h1>
         <p class="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto mb-10">
-           I build for the Android platform.
+           Android Engineer with 5 years shipping production Kotlin apps in fintech, insurtech & mobility.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <button
@@ -19,7 +19,7 @@
             🚀 View My Work
           </button>
           <a
-            href="../../public/resume.pdf"
+            href="/resume.pdf"
             download
             class="border border-sky-500 hover:bg-sky-500 px-6 py-3 rounded-full font-semibold shadow-lg transition duration-300 hover:scale-105"
           >
@@ -42,16 +42,15 @@
         <div>
           <h2 class="text-3xl font-bold text-sky-500 mb-4">About Me</h2>
           <p class="text-lg leading-relaxed">
-            I’m a Native Android Engineer with 3+ years of experience designing
-            and building high-quality, production-ready mobile applications
-            using Kotlin. My approach to development combines clean
-            architecture, MVVM, and robust design principles ensuring
-            every project is scalable and maintainable.
+            I'm an Android Engineer with <strong>5 years</strong> of experience building and shipping
+            production Kotlin applications in <strong>fintech, insurtech and mobility</strong>. I currently
+            work at <strong>bolttech</strong>, where I led the end-to-end rebrand of a multi-module
+            insurance marketplace app and own a device-financing app from first commit to production.
           </p>
           <p class="mt-4 text-lg leading-relaxed">
-            I build with Jetpack Compose, leverage the full Jetpack library
-            suite, and integrate seamlessly with RESTful APIs to deliver fast,
-            intuitive, and impactful user experiences.
+            I work primarily with <strong>Jetpack Compose</strong>, <strong>Clean Architecture</strong> and
+            <strong>MVI</strong>, and build the internal tooling and design systems that let teams ship
+            faster — from Gradle convention plugins to shared Compose design-system modules.
           </p>
           <p class="mt-4 text-sky-300 text-sm italic">
             My goal? To craft apps that not only function beautifully but scale

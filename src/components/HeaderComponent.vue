@@ -8,6 +8,7 @@
       <li><router-link to="/" class="text-white hover:text-sky-500 transition uppercase">Home</router-link></li>
       <li><router-link to="/about" class="text-white hover:text-sky-500 transition uppercase">About</router-link></li>
       <li><router-link to="/service" class="text-white hover:text-sky-500 transition uppercase">Services</router-link></li>
+      <li><router-link to="/work" class="text-white hover:text-sky-500 transition uppercase">Work</router-link></li>
       <li><router-link to="/contact" class="text-white hover:text-sky-500 transition uppercase">Contact</router-link></li>
      </ul>
   </div>
@@ -38,6 +39,7 @@
         <li><router-link to="/" @click="toggleMobileSidebar" class="hover:text-sky-500 uppercase">Home</router-link></li>
         <li><router-link to="/about" @click="toggleMobileSidebar" class="hover:text-sky-500 uppercase">About</router-link></li>
         <li><router-link to="/service" @click="toggleMobileSidebar" class="hover:text-sky-500 uppercase">Services</router-link></li>
+        <li><router-link to="/work" @click="toggleMobileSidebar" class="hover:text-sky-500 uppercase">Work</router-link></li>
         <li><router-link to="/contact" @click="toggleMobileSidebar" class="hover:text-sky-500 uppercase">Contact</router-link></li>
       </ul>
     </div>

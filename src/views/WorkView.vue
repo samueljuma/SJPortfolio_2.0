@@ -76,6 +76,22 @@ const placeholderImage = "https://via.placeholder.com/600x400?text=Project+Previ
 const projects = ref([
   {
     id: 1,
+    title: "bolttech Kenya - Insurance Marketplace",
+    image: new URL ('../assets/projects/bolttech_marketplace.png', import.meta.url).href,
+    description:
+      "The official bolttech Kenya app — a consumer insurance marketplace bringing multiple underwriters and product lines into one place, so users can compare quotes, buy cover, and manage policies and claims without going through a broker. Built on a multi-module Clean Architecture codebase with Compose, MVI, Koin, Ktor, and Room.",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.hillcroft.apps.mtek",
+  },
+  {
+    id: 2,
+    title: "bolttech DLM",
+    image: new URL ('../assets/projects/bolttech-dlm.png', import.meta.url).href,
+    description:
+      "A device financing and repair-claim management app built end-to-end from first commit to production. Customers register a financed device, track and pay down their balance, and file and follow repair claims in-app — replacing a paper-based process that previously ran through agents.",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.bolttech.device",
+  },
+  {
+    id: 3,
     title: "GMS",
     image: new URL ('../assets/projects/gms_fg.png', import.meta.url).href,
     description:
@@ -83,7 +99,7 @@ const projects = ref([
     playStoreLink: "https://play.google.com/store/apps/details?id=com.samueljuma.gmsmobile",
   },
   {
-    id: 2,
+    id: 4,
     title: "Soores",
     image: "https://res.cloudinary.com/du1q1vzeu/image/upload/v1761727259/soores_gf_x2uaxy.png",
     description:
@@ -91,7 +107,7 @@ const projects = ref([
     playStoreLink: "https://play.google.com/store/apps/details?id=com.buupass.soores_marketplace",
   },
   {
-    id: 3,
+    id: 5,
     title: "Quick Shuttle",
     image: "https://res.cloudinary.com/du1q1vzeu/image/upload/v1761727939/quick_fg_lodj3z.png",
     description:

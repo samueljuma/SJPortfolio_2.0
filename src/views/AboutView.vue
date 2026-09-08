@@ -10,13 +10,13 @@
       />
       <div class="text-white text-lg leading-relaxed">
         <p>
-        👋 Hi, I'm <strong>Samuel Juma</strong> — a Native Android Engineer based in Nairobi, Kenya.
+        👋 Hi, I'm <strong>Samuel Juma</strong> — an Android Engineer based in Nairobi, Kenya.
         </p>
           <p class="mt-4">
-           With <strong>3+ years</strong> of experience, I design and build high-quality, production-ready mobile apps using <strong>Kotlin</strong>, <strong>Jetpack Compose</strong>, and the full <strong>Jetpack</strong> suite.
+           With <strong>5 years</strong> of experience, I build and ship production Kotlin applications in <strong>fintech, insurtech and mobility</strong>, using <strong>Kotlin</strong>, <strong>Jetpack Compose</strong>, and the full <strong>Jetpack</strong> suite. I'm currently an Android Engineer at <strong>bolttech</strong>.
           </p>
           <p class="mt-4">
-            I follow clean architecture, <strong>MVVM</strong> patterns, and solid design principles to ensure scalable, maintainable codebases. I also integrate RESTful APIs seamlessly and optimize performance using <strong>Kotlin Coroutines</strong> and dependency injection with <strong>Ktor</strong>.
+            I follow <strong>Clean Architecture</strong>, <strong>MVI</strong> and <strong>MVVM</strong> patterns across multi-module codebases, and build the internal tooling and design systems that let teams ship faster — from Gradle convention plugins to shared Compose design systems. I've owned apps end to end from first commit to Play Store release, and led a full product rebrand across multi-module codebases.
           </p>
           <p class="mt-4 italic text-sm text-sky-400">
             Architecture nerd. Battery optimizer. Clean code advocate.
@@ -83,28 +83,28 @@ import AOS from 'aos';
 
 const experiences = [
   {
-    company: 'BuuPass Inc.',
+    company: 'bolttech (formerly mTek)',
+    role: 'Android Engineer',
+    period: 'May 2026 – Present',
+    description: 'Led the end-to-end rebrand of the mTek insurance marketplace app to bolttech Kenya across a multi-module Kotlin codebase, shipping the new identity in a single Play Store release. Built a Gradle convention-plugin module centralizing dependency management across 21 feature modules, and shipped a shared Compose design-system module used across every screen.',
+  },
+  {
+    company: 'BuuPass',
     role: 'Mobile Engineer',
-    period: 'Jul 2024 – Present',
-    description: 'Built a mobile ticketing systems, optimized legacy code (25% fewer crashes), and improved app performance by 30%.',
+    period: 'Sept 2023 – May 2026',
+    description: 'Rebuilt the UI and booking flow of the BuuPass marketplace app, developed mobile point-of-sale ticketing for bus agents, and integrated M-Pesa payments via the Daraja API with instant digital ticketing. Introduced Firebase Crashlytics for production crash visibility.',
   },
   {
     company: 'PhillQins Hub',
-    role: 'Software Engineer',
-    period: 'May 2024 – Jul 2024',
-    description: ' Responsible for architecting clean, maintainable codebases, integrating APIs, and delivering apps from concept to deployment.',
-  },
-  {
-    company: 'Freelance',
-    role: 'Native Android Developer',
-    period: 'Jan 2023 – May 2024',
-    description: 'Handled full app lifecycles including testing, optimization, and CI/CD. Achieved 95% post-launch stability.',
+    role: 'Android Developer',
+    period: 'Jan 2023 – Sept 2023',
+    description: 'Managed the full release lifecycle for client Android apps, including testing, debugging and Play Store submission. Profiled and optimized app performance through refactoring and memory-leak fixes.',
   },
   {
     company: 'PWD Gigs / EldoHub',
     role: 'Software Developer',
     period: 'Oct 2021 – Jan 2023',
-    description: 'Developed accessible mobile apps & refactored core web code to reduce page loads by 30%.',
+    description: 'Refactored the organisation\'s primary website for performance and scalability, and built a companion mobile app extending its services to mobile users. Implemented WCAG accessibility standards — screen reader support, contrast and keyboard navigation.',
   }
 ];
 
@@ -126,27 +126,27 @@ const education = [
 const skills = [
   {
     title: 'Mobile Development',
-    description: 'Kotlin, Jetpack Compose, MVVM, Material Design 3, XML, KMM',
+    description: 'Kotlin, Java, Jetpack Compose, Android SDK, Material 3, Coroutines, Flow, WorkManager, Navigation',
   },
   {
-    title: 'Architecture & State Management',
-    description: 'Clean Architecture, MVVM, MVI, Repository Pattern, ViewModel, Hilt, Koin, StateFlow, LiveData',
+    title: 'Architecture & Dependency Injection',
+    description: 'Clean Architecture, MVI, MVVM, Multi-module architecture, Hilt, Koin, SOLID principles',
+  },
+  {
+    title: 'Cross-platform',
+    description: 'Kotlin Multiplatform (KMP/KMM), Compose Multiplatform',
   },
   {
     title: 'API Integration & Data',
-    description: 'Retrofit, Ktor, RESTful APIs, Gson, Moshi, Room, SqlDelight, DataStore',
+    description: 'Retrofit, Ktor, RESTful APIs, M-Pesa Daraja API, Room, DataStore',
   },
   {
-    title: 'CI/CD & DevOps',
-    description: 'GitHub Actions, Firebase App Distribution, Modularization, Agile, Git',
+    title: 'Build & Delivery',
+    description: 'Gradle, Gradle Convention Plugins, Version Catalogs, KSP, CI/CD, Google Play Console, Firebase (Crashlytics, Analytics, Remote Config)',
   },
   {
     title: 'Testing & Debugging',
-    description: 'JUnit, MockK, Espresso, LeakCanary, Crashlytics, Android Profiler',
-  },
-  {
-    title: 'Cloud & AI',
-    description: 'Microsoft Azure, Azure AI APIs, Edge computing integrations on Android',
+    description: 'JUnit, MockK, Turbine, Espresso, Compose UI Testing, Android Profiler',
   }
 ];
 
