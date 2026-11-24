@@ -1,0 +1,94 @@
+---
+import { experience, site } from '../../data/site';
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import IconBadge from '../ui/IconBadge.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Tag from '../ui/Tag.astro';
+---
+
+<section id="experience" class="py-16 md:py-[120px]" aria-labelledby="experience-title">
+  <Container class="flex flex-col gap-10 md:gap-14">
+    <SectionHeading id="experience-title" eyebrow={experience.eyebrow} title={experience.title} />
+
+    <div class="grid gap-12 lg:grid-cols-[1fr_400px] lg:gap-16">
+      <ol class="flex flex-col">
+        {
+          experience.roles.map((job, idx) => {
+            const first = idx === 0;
+            const last = idx === experience.roles.length - 1;
+            return (
+              <li class="flex gap-4 md:gap-7" data-reveal>
+                <div class="flex w-3.5 flex-none flex-col items-center md:w-4" aria-hidden="true">
+                  <span
+                    class:list={[
+                      'mt-1 size-3 flex-none rounded-full border-2 md:size-3.5',
+                      first
+                        ? 'border-accent bg-accent shadow-accent/60 shadow-[0_0_12px_2px]'
+                        : 'border-line bg-ink',
+                    ]}
+                  />
+                  {!last && <span class="bg-line w-0.5 flex-1" />}
+                </div>
+                <div class:list={['flex flex-col gap-2', !last && 'pb-8 md:pb-11']}>
+                  <p
+                    class:list={[
+                      'font-mono text-[11px] font-medium tracking-[0.06em] uppercase md:text-xs',
+                      first ? 'text-accent' : 'text-subtle',
+                    ]}
+                  >
+                    {job.period}
+                  </p>
+                  <h3 class="font-display text-[17px] font-bold md:text-[21px]">
+                    {job.role} <span class="text-muted">· {job.company}</span>
+                  </h3>
+                  <p class="text-muted text-[14.5px] leading-[1.65] md:text-[15.5px]">{job.text}</p>
+                  <ul class="flex flex-wrap gap-2 pt-1" aria-label="Focus areas">
+                    {job.tags.map((tag) => (
+                      <li>
+                        <Tag>{tag}</Tag>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            );
+          })
+        }
+      </ol>
+
+      <aside class="flex flex-col gap-4" aria-labelledby="education-title">
+        <h3
+          id="education-title"
+          class="text-subtle font-mono text-xs font-medium tracking-[0.06em] uppercase"
+        >
+          {experience.educationLabel}
+        </h3>
+        <ul class="flex flex-col gap-4">
+          {
+            experience.education.map((edu) => (
+              <li
+                class="border-line bg-surface flex gap-4 rounded-2xl border px-5 py-[18px]"
+                data-reveal
+              >
+                <IconBadge name="graduation-cap" size="sm" />
+                <div class="flex flex-col gap-1">
+                  <p class="text-[15px] font-semibold">{edu.title}</p>
+                  <p class="text-subtle text-[13px] leading-normal">{edu.detail}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+        <div
+          class="border-accent/35 bg-accent-soft flex flex-col items-start gap-3.5 rounded-[18px] border p-6"
+          data-reveal
+        >
+          <p class="font-display text-lg font-bold">{experience.resumeCard.title}</p>
+          <p class="text-muted text-[14.5px] leading-[1.55]">{experience.resumeCard.text}</p>
+          <Button href={site.resume} icon="download" download>{experience.resumeCard.cta}</Button>
+        </div>
+      </aside>
+    </div>
+  </Container>
+</section>

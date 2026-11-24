@@ -1,0 +1,19 @@
+---
+import Button from '../components/ui/Button.astro';
+import Container from '../components/ui/Container.astro';
+import IconBadge from '../components/ui/IconBadge.astro';
+import { contact, site } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title={`Message sent — ${site.name}`}>
+  <meta slot="head" name="robots" content="noindex" />
+  <Container class="flex min-h-[60vh] flex-col items-start justify-center gap-6 py-20">
+    <IconBadge name="check" />
+    <h1 class="font-display text-4xl font-extrabold tracking-[-0.02em] md:text-5xl">
+      {contact.thanks.title}
+    </h1>
+    <p class="text-muted max-w-xl text-lg leading-relaxed">{contact.thanks.text}</p>
+    <Button href="/">{contact.thanks.cta}</Button>
+  </Container>
+</BaseLayout>

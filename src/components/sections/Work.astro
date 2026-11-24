@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+
+import { projects, work } from '../../data/site';
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import PlayBadge from '../ui/PlayBadge.astro';
+import ProjectCard from '../ui/ProjectCard.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Tag from '../ui/Tag.astro';
+
+const featured = projects.find((p) => p.featured);
+const rest = projects.filter((p) => !p.featured);
+---
+
+<section id="work" class="py-16 md:py-[120px]" aria-labelledby="work-title">
+  <Container class="flex flex-col gap-10 md:gap-14">
+    <SectionHeading id="work-title" eyebrow={work.eyebrow} title={work.title} lede={work.lede} />
+
+    {
+      featured && (
+        <article
+          class="border-line bg-surface grid overflow-hidden rounded-[28px] border lg:grid-cols-[minmax(0,1fr)_minmax(0,0.75fr)]"
+          data-reveal
+        >
+          <div class="relative aspect-[1024/500] lg:aspect-auto">
+            <Image
+              src={featured.image}
+              alt={featured.imageAlt}
+              widths={[600, 900, 1400]}
+              sizes="(min-width: 1024px) 700px, 100vw"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+          <div class="flex flex-col justify-center gap-[18px] px-5 py-7 md:px-10 md:py-11">
+            <p class="bg-accent-soft text-accent w-fit rounded-full px-3 py-1.5 font-mono text-xs font-medium tracking-[0.06em] uppercase">
+              Featured · {featured.industry}
+            </p>
+            <h3 class="font-display text-[26px] leading-[1.2] font-extrabold tracking-[-0.02em] md:text-[30px]">
+              {featured.fullTitle ?? featured.title}
+            </h3>
+            <p class="text-muted leading-relaxed">{featured.summary}</p>
+            <ul class="flex flex-wrap gap-2" aria-label="Tech used">
+              {featured.tags.map((tag) => (
+                <li>
+                  <Tag>{tag}</Tag>
+                </li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              {featured.caseStudy && (
+                <Button href={`/work/${featured.slug}`}>Read case study</Button>
+              )}
+              <PlayBadge href={featured.playStore} />
+            </div>
+          </div>
+        </article>
+      )
+    }
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {rest.map((project) => <ProjectCard project={project} />)}
+    </div>
+
+    <div class="flex justify-center">
+      <Button href={work.more.href} variant="outline" icon="arrow-up-right" external>
+        {work.more.label}
+      </Button>
+    </div>
+  </Container>
+</section>

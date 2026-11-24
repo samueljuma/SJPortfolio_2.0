@@ -1,0 +1,165 @@
+---
+import { Image } from 'astro:assets';
+
+import profile from '../../assets/profile.png';
+import { hero, site } from '../../data/site';
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import Icon from '../ui/Icon.astro';
+import PlayLogo from '../ui/PlayLogo.astro';
+import SocialLinks from '../ui/SocialLinks.astro';
+
+const floatCard =
+  'border-line bg-surface/90 flex items-center gap-3 rounded-[18px] border px-4 py-3.5 shadow-[0_18px_40px] shadow-black/45 backdrop-blur-md';
+---
+
+<section class="relative overflow-hidden" aria-labelledby="hero-title">
+  <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+  <div
+    class="bg-accent/15 pointer-events-none absolute -top-10 right-[-10%] size-[620px] rounded-full blur-[140px]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <Container class="relative pt-9 pb-12 lg:pt-24 lg:pb-16">
+    <div class="grid items-center gap-12 xl:grid-cols-[1fr_440px] xl:gap-20">
+      <div class="flex flex-col gap-6 lg:gap-7">
+        <p
+          class="border-line bg-surface text-muted inline-flex w-fit items-center gap-2.5 rounded-full border py-2 pr-4 pl-3.5 text-[13px] font-medium md:text-sm"
+        >
+          <span class="bg-accent shadow-accent size-2 rounded-full shadow-[0_0_10px]"></span>
+          {hero.availability}
+        </p>
+
+        <h1
+          id="hero-title"
+          class="font-display text-[40px] leading-[1.06] font-extrabold tracking-[-0.03em] text-balance sm:text-5xl lg:text-[58px] lg:leading-[1.05] xl:text-[64px]"
+        >
+          {
+            hero.headline.map((line) => {
+              const i = line.indexOf(hero.highlight);
+              return (
+                <span class="lg:block">
+                  {i === -1 ? (
+                    line
+                  ) : (
+                    <>
+                      {line.slice(0, i)}
+                      <span class="text-accent">{hero.highlight}</span>
+                      {line.slice(i + hero.highlight.length)}
+                    </>
+                  )}{' '}
+                </span>
+              );
+            })
+          }
+        </h1>
+
+        <p
+          class="text-muted max-w-[580px] text-base leading-relaxed md:text-[19px] md:leading-[1.6]"
+        >
+          {hero.lede}
+        </p>
+
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
+          <Button href={hero.secondaryCta.href} variant="outline" icon="download" download>
+            {hero.secondaryCta.label}
+          </Button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
+          <SocialLinks />
+          <span class="bg-line hidden h-6 w-px sm:block" aria-hidden="true"></span>
+          <p class="text-subtle flex items-center gap-2 text-sm">
+            <Icon name="map-pin" size={16} />
+            {hero.locationNote}
+          </p>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-[440px]">
+        <div
+          class="border-line from-accent-soft to-surface relative aspect-[440/540] overflow-hidden rounded-[28px] border bg-linear-to-b lg:rounded-[36px]"
+        >
+          <div
+            class="border-accent/40 absolute top-[11%] left-1/2 aspect-square w-[86%] -translate-x-1/2 rounded-full border-2"
+            aria-hidden="true"
+          >
+          </div>
+          <div
+            class="bg-accent/14 absolute top-[18.5%] left-1/2 aspect-square w-[68%] -translate-x-1/2 rounded-full"
+            aria-hidden="true"
+          >
+          </div>
+          <Image
+            src={profile}
+            alt={`${site.name}, ${site.role}`}
+            widths={[372, 560, 702]}
+            sizes="(min-width: 1024px) 372px, 85vw"
+            loading="eager"
+            fetchpriority="high"
+            class="absolute bottom-0 left-1/2 h-auto w-[85%] -translate-x-1/2"
+          />
+        </div>
+
+        <!-- Floating cards -->
+        <div
+          class:list={[
+            floatCard,
+            'absolute bottom-4 left-3.5 xl:top-[94px] xl:bottom-auto xl:-left-14',
+          ]}
+        >
+          <span
+            class="bg-accent-soft text-accent flex size-10 items-center justify-center rounded-xl"
+          >
+            <Icon name="briefcase" size={19} />
+          </span>
+          <span class="flex flex-col">
+            <span class="text-subtle text-xs">{hero.currentRole.label}</span>
+            <span class="text-sm font-semibold">{hero.currentRole.value}</span>
+          </span>
+        </div>
+
+        <div
+          class="border-line bg-ink/90 float-slow absolute top-[384px] -left-14 hidden rounded-[18px] border px-4 py-3.5 shadow-[0_18px_40px] shadow-black/45 xl:block"
+          aria-hidden="true"
+        >
+          <pre
+            class="text-accent font-mono text-xs leading-[1.5]">@Composable
+fun ShipIt() = Clean + Fast</pre>
+        </div>
+
+        <div class:list={[floatCard, 'absolute top-[464px] -right-12 hidden xl:flex']}>
+          <span class="flex size-10 items-center justify-center rounded-xl bg-white">
+            <PlayLogo size={22} />
+          </span>
+          <span class="flex flex-col">
+            <span class="font-display text-lg leading-tight font-extrabold"
+              >{hero.playCard.value}</span
+            >
+            <span class="text-subtle text-xs">{hero.playCard.label}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <dl
+      class="md:border-line mt-12 grid grid-cols-2 gap-3 md:mt-16 md:grid-cols-3 md:gap-0 md:border-t md:pt-7"
+    >
+      {
+        hero.stats.map((stat, i) => (
+          <div
+            class:list={[
+              'border-line bg-surface/70 flex flex-col-reverse gap-1 rounded-2xl border px-4 py-3.5 md:rounded-none md:border-0 md:bg-transparent md:p-0',
+              i === hero.stats.length - 1 && 'col-span-2 md:col-span-1',
+            ]}
+          >
+            <dt class="text-muted text-[13px] md:text-sm">{stat.label}</dt>
+            <dd class="font-display text-[26px] font-extrabold md:text-[34px]">{stat.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </Container>
+</section>

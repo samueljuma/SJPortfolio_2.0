@@ -1,0 +1,17 @@
+---
+import Button from '../components/ui/Button.astro';
+import Container from '../components/ui/Container.astro';
+import { notFound, site } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title={`Page not found — ${site.name}`}>
+  <Container class="flex min-h-[60vh] flex-col items-start justify-center gap-6 py-20">
+    <p class="text-accent font-mono text-sm tracking-[0.08em]">404</p>
+    <h1 class="font-display text-4xl font-extrabold tracking-[-0.02em] md:text-5xl">
+      {notFound.title}
+    </h1>
+    <p class="text-muted max-w-xl text-lg leading-relaxed">{notFound.text}</p>
+    <Button href="/">{notFound.cta}</Button>
+  </Container>
+</BaseLayout>
