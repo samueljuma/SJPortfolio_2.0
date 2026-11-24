@@ -6,7 +6,6 @@ import { hero, site } from '../../data/site';
 import Button from '../ui/Button.astro';
 import Container from '../ui/Container.astro';
 import Icon from '../ui/Icon.astro';
-import PlayLogo from '../ui/PlayLogo.astro';
 import SocialLinks from '../ui/SocialLinks.astro';
 
 const floatCard =
@@ -115,10 +114,7 @@ const floatCard =
           >
             <Icon name="briefcase" size={19} />
           </span>
-          <span class="flex flex-col">
-            <span class="text-subtle text-xs">{hero.currentRole.label}</span>
-            <span class="text-sm font-semibold">{hero.currentRole.value}</span>
-          </span>
+          <span class="text-sm font-semibold">{hero.currentRole}</span>
         </div>
 
         <div
@@ -128,18 +124,6 @@ const floatCard =
           <pre
             class="text-accent font-mono text-xs leading-[1.5]">@Composable
 fun ShipIt() = Clean + Fast</pre>
-        </div>
-
-        <div class:list={[floatCard, 'absolute top-[464px] -right-12 hidden xl:flex']}>
-          <span class="flex size-10 items-center justify-center rounded-xl bg-white">
-            <PlayLogo size={22} />
-          </span>
-          <span class="flex flex-col">
-            <span class="font-display text-lg leading-tight font-extrabold"
-              >{hero.playCard.value}</span
-            >
-            <span class="text-subtle text-xs">{hero.playCard.label}</span>
-          </span>
         </div>
       </div>
     </div>

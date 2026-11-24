@@ -71,8 +71,7 @@ export const hero = {
   primaryCta: { label: 'View my work', href: '/#work' },
   secondaryCta: { label: 'Download résumé', href: '/resume.pdf' },
   locationNote: 'Nairobi, Kenya · working with teams worldwide',
-  currentRole: { label: 'Currently', value: 'Android Engineer · bolttech' },
-  playCard: { value: '5 apps', label: 'live on Google Play' },
+  currentRole: 'Mobile Engineer',
   stats: [
     { value: '5+', label: 'Years shipping Android' },
     { value: '5', label: 'Production apps on Play' },
@@ -214,7 +213,7 @@ export const about = {
   title: 'I build apps that stay fast and easy to change.',
   highlight: 'fast and easy to change.',
   body: [
-    "I build and ship production Kotlin apps in fintech, insurtech and mobility using Jetpack Compose and the full Jetpack suite. Today I'm an Android Engineer at bolttech, where I led the end-to-end rebrand of a multi-module insurance marketplace and own a device-financing app from first commit to production.",
+    'I build and ship production Kotlin apps in fintech, insurtech and mobility using Jetpack Compose and the full Jetpack suite. I led the end-to-end rebrand of a multi-module insurance marketplace and own a device-financing app from first commit to production.',
     'I care about the parts users never see: the architecture, tooling and design systems that let a team keep shipping fast as an app grows.',
   ],
   principles: [

@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 
 import type { Project } from '../../data/site';
 import Icon from './Icon.astro';
-import PlayLogo from './PlayLogo.astro';
 import Tag from './Tag.astro';
 
 interface Props {
@@ -59,8 +58,9 @@ const { project } = Astro.props;
         rel="noopener noreferrer"
         class="text-muted hover:text-text inline-flex items-center gap-2 text-[15px] font-medium transition-colors"
       >
-        <PlayLogo size={16} />
-        Google Play<span class="sr-only">: {project.title}</span>
+        Google Play <Icon name="arrow-up-right" size={15} /><span class="sr-only"
+          >: {project.title}</span
+        >
       </a>
     </div>
   </div>
