@@ -1,0 +1,97 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+@import '@fontsource/plus-jakarta-sans/800.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@import 'tailwindcss';
+
+/*
+ * Design tokens — single source of truth, matching the Figma file
+ * "Samuel Juma — Portfolio" (Foundations page). Use them through Tailwind
+ * utilities (bg-ink, text-muted, border-line, text-accent…); never
+ * hard-code hex values in components.
+ */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Surfaces, darkest to lightest */
+  --color-ink: #0b0f17; /* page background */
+  --color-surface: #121826; /* cards */
+  --color-surface-2: #1a2232; /* chips, inputs */
+  --color-line: #243047; /* borders, dividers */
+
+  /* Text */
+  --color-text: #f3f6fa;
+  --color-muted: #9aa6b8; /* body copy */
+  --color-subtle: #6b778a; /* captions, fine print */
+
+  /* Signal accent (Android green). Accent surfaces carry accent-ink text. */
+  --color-accent: #3ddc84;
+  --color-accent-soft: #163a2a;
+  --color-accent-ink: #06210f;
+
+  /* Layout */
+  --container-page: 75rem; /* 1200px content width */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-ink text-text font-sans antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Faint engineering grid used behind the hero and social graphics. */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at 60% 40%, black 10%, transparent 70%);
+}
+
+/*
+ * Scroll-reveal: [data-reveal] elements fade/slide in on entering the
+ * viewport (script in BaseLayout). Gated on the .js class so content stays
+ * visible without JavaScript, and skipped entirely for reduced motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+
+  .js [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  .float-slow {
+    animation: float 7s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
