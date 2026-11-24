@@ -1,0 +1,22 @@
+---
+import { socials } from '../../data/site';
+import Icon from './Icon.astro';
+---
+
+<ul class="flex items-center gap-2.5">
+  {
+    socials.map((s) => (
+      <li>
+        <a
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={s.label}
+          class="border-line bg-surface text-muted hover:border-accent/60 hover:text-accent flex size-11 items-center justify-center rounded-xl border transition-colors"
+        >
+          <Icon name={s.icon} size={19} />
+        </a>
+      </li>
+    ))
+  }
+</ul>

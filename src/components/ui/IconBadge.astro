@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro';
+import type { IconName } from './icons';
+
+interface Props {
+  name: IconName;
+  size?: 'sm' | 'md';
+}
+
+const { name, size = 'md' } = Astro.props;
+---
+
+<span
+  class:list={[
+    'bg-accent-soft text-accent flex flex-none items-center justify-center rounded-xl',
+    size === 'md' ? 'size-11' : 'size-9',
+  ]}
+>
+  <Icon name={name} size={size === 'md' ? 21 : 17} />
+</span>

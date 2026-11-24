@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+
+import badge from '../../assets/google-play-badge.png';
+
+/** Official "Get it on Google Play" badge linking to a store listing. */
+interface Props {
+  href: string;
+  class?: string;
+}
+
+const { href, class: className } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    'inline-block rounded-[10px] transition-transform hover:-translate-y-0.5',
+    className,
+  ]}
+>
+  <Image src={badge} alt="Get it on Google Play" width={180} class="block h-auto w-[164px]" />
+</a>

@@ -1,0 +1,44 @@
+---
+import Icon from './Icon.astro';
+import type { IconName } from './icons';
+
+interface Props {
+  href: string;
+  variant?: 'primary' | 'outline';
+  icon?: IconName;
+  /** Open in a new tab (external links). */
+  external?: boolean;
+  download?: boolean;
+  class?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  icon = 'arrow-right',
+  external = false,
+  download = false,
+  class: className,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
+  download={download || undefined}
+  class:list={[
+    'group inline-flex items-center justify-center gap-2.5 rounded-xl px-[22px] py-3.5 text-base font-semibold transition-all duration-200',
+    variant === 'primary'
+      ? 'bg-accent text-accent-ink shadow-accent/20 hover:shadow-accent/30 shadow-[0_10px_30px] hover:-translate-y-0.5 hover:shadow-[0_14px_36px]'
+      : 'border-line text-text hover:border-accent/60 hover:bg-surface border-[1.5px]',
+    className,
+  ]}
+>
+  <slot />
+  <Icon
+    name={icon}
+    size={18}
+    class={icon === 'arrow-right' ? 'transition-transform group-hover:translate-x-0.5' : ''}
+  />
+</a>

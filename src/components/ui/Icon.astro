@@ -1,0 +1,28 @@
+---
+import { icons, type IconName } from './icons';
+
+/** Inline SVG icon; decorative by default (aria-hidden). */
+interface Props extends astroHTML.JSX.SVGAttributes {
+  name: IconName;
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 20, class: className, ...attrs } = Astro.props;
+const icon = icons[name];
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill={icon.stroke ? 'none' : 'currentColor'}
+  stroke={icon.stroke ? 'currentColor' : undefined}
+  stroke-width={icon.stroke ? '2' : undefined}
+  stroke-linecap={icon.stroke ? 'round' : undefined}
+  stroke-linejoin={icon.stroke ? 'round' : undefined}
+  aria-hidden="true"
+  class:list={['flex-none', className]}
+  set:html={icon.body}
+  {...attrs}
+/>
