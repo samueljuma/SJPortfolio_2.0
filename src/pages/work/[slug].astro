@@ -1,0 +1,198 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { Image } from 'astro:assets';
+
+import Container from '../../components/ui/Container.astro';
+import Eyebrow from '../../components/ui/Eyebrow.astro';
+import Icon from '../../components/ui/Icon.astro';
+import PlayBadge from '../../components/ui/PlayBadge.astro';
+import Tag from '../../components/ui/Tag.astro';
+import { caseStudyUi as ui, projects, site, type CaseStudy, type Project } from '../../data/site';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const getStaticPaths = (() =>
+  projects
+    .filter((p) => p.caseStudy)
+    .map((project) => ({
+      params: { slug: project.slug },
+      props: { project },
+    }))) satisfies GetStaticPaths;
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const cs = project.caseStudy as CaseStudy;
+const moreImage = projects.find((p) => !p.caseStudy)?.image ?? project.image;
+
+const toc = [
+  { id: 'overview', label: ui.sections.overview },
+  { id: 'challenge', label: ui.sections.challenge },
+  { id: 'built', label: ui.sections.built },
+  { id: 'outcomes', label: ui.sections.outcomes },
+  { id: 'stack', label: ui.sections.stack },
+];
+const h2 = 'font-display scroll-mt-28 text-2xl font-bold tracking-[-0.01em] md:text-[28px]';
+const para = 'text-muted text-base leading-[1.7] md:text-[17px]';
+---
+
+<BaseLayout
+  title={`${project.title} case study — ${site.name}`}
+  description={cs.lede}
+  ogType="article"
+>
+  <article>
+    <header>
+      <Container class="flex flex-col gap-6 pt-10 pb-10 md:pt-14 md:pb-12">
+        <a
+          href="/#work"
+          class="text-muted hover:text-text flex w-fit items-center gap-2 text-[15px] font-medium transition-colors"
+        >
+          <Icon name="arrow-left" size={16} />
+          {ui.back}
+        </a>
+        <Eyebrow>{ui.eyebrowPrefix} · {project.industry}</Eyebrow>
+        <h1
+          class="font-display max-w-[960px] text-[34px] leading-[1.08] font-extrabold tracking-[-0.03em] text-balance md:text-[56px]"
+        >
+          {cs.headline}
+        </h1>
+        <p class="text-muted max-w-[780px] text-[17px] leading-relaxed md:text-[19px]">{cs.lede}</p>
+        <dl class="border-line grid grid-cols-2 gap-5 border-t pt-6 md:grid-cols-4">
+          {
+            cs.meta.map((m) => (
+              <div class="flex flex-col-reverse gap-1.5">
+                <dd class="text-[15px] font-semibold md:text-[17px]">{m.value}</dd>
+                <dt class="text-subtle font-mono text-xs font-medium tracking-[0.06em] uppercase">
+                  {m.label}
+                </dt>
+              </div>
+            ))
+          }
+        </dl>
+        <PlayBadge href={project.playStore} class="mt-2" />
+      </Container>
+    </header>
+
+    <Container>
+      <Image
+        src={project.image}
+        alt={project.imageAlt}
+        widths={[600, 1200, 2048]}
+        sizes="(min-width: 1280px) 1200px, 100vw"
+        loading="eager"
+        class="border-line h-auto w-full rounded-[20px] border md:rounded-[28px]"
+      />
+    </Container>
+
+    <Container class="grid gap-10 py-14 md:py-24 lg:grid-cols-[240px_1fr] lg:gap-24">
+      <nav aria-label={ui.toc} class="hidden lg:block">
+        <div class="sticky top-28 flex flex-col gap-3.5">
+          <p class="text-subtle font-mono text-xs font-medium tracking-[0.06em] uppercase">
+            {ui.toc}
+          </p>
+          <ul class="flex flex-col gap-3.5">
+            {
+              toc.map((item) => (
+                <li>
+                  <a
+                    href={`#${item.id}`}
+                    class="text-muted hover:text-text border-line hover:border-accent block border-l-2 pl-3 text-[15px] transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </nav>
+
+      <div class="flex max-w-[820px] flex-col gap-12 md:gap-14">
+        <section class="flex flex-col gap-4" data-reveal>
+          <h2 id="overview" class={h2}>{ui.sections.overview}</h2>
+          <p class={para}>{cs.overview}</p>
+        </section>
+        <section class="flex flex-col gap-4" data-reveal>
+          <h2 id="challenge" class={h2}>{ui.sections.challenge}</h2>
+          <p class={para}>{cs.challenge}</p>
+        </section>
+        <section class="flex flex-col gap-4" data-reveal>
+          <h2 id="built" class={h2}>{ui.sections.built}</h2>
+          <ul class="flex flex-col gap-4">
+            {
+              cs.built.map((item) => (
+                <li class="flex gap-3.5">
+                  <span class="bg-accent-soft text-accent mt-0.5 flex size-[26px] flex-none items-center justify-center rounded-full">
+                    <Icon name="check" size={14} stroke-width="3" />
+                  </span>
+                  <span class={para}>{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+        <section class="flex flex-col gap-4" data-reveal>
+          <h2 id="outcomes" class={h2}>{ui.sections.outcomes}</h2>
+          <ul class="grid gap-4 sm:grid-cols-3">
+            {
+              cs.outcomes.map((o) => (
+                <li class="border-line bg-surface flex flex-col gap-1.5 rounded-[18px] border px-6 py-[22px]">
+                  <span class="font-display text-accent text-[40px] leading-tight font-extrabold tracking-[-0.03em]">
+                    {o.value}
+                  </span>
+                  <span class="text-muted text-[14.5px] leading-normal">{o.label}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+        <section class="flex flex-col gap-4" data-reveal>
+          <h2 id="stack" class={h2}>{ui.sections.stack}</h2>
+          <ul class="flex flex-wrap gap-2">
+            {
+              cs.stack.map((t) => (
+                <li>
+                  <Tag>{t}</Tag>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+      </div>
+    </Container>
+  </article>
+
+  <Container class="pb-16 md:pb-24">
+    <a
+      href="/#work"
+      class="border-line bg-surface hover:border-accent/40 group grid overflow-hidden rounded-[28px] border transition-colors md:grid-cols-[1fr_620px]"
+    >
+      <div class="flex flex-col justify-center gap-3 px-6 py-8 md:px-12 md:py-11">
+        <p class="text-accent font-mono text-xs font-medium tracking-[0.06em] uppercase">
+          {ui.more.eyebrow}
+        </p>
+        <p class="font-display text-[26px] font-extrabold tracking-[-0.02em] md:text-[30px]">
+          {ui.more.title}
+        </p>
+        <p class="text-muted leading-relaxed">{ui.more.text}</p>
+        <span class="flex items-center gap-2 pt-1.5 text-[15px] font-semibold">
+          {ui.more.cta}
+          <Icon
+            name="arrow-right"
+            size={16}
+            class="transition-transform group-hover:translate-x-0.5"
+          />
+        </span>
+      </div>
+      <Image
+        src={moreImage}
+        alt=""
+        widths={[620, 1240]}
+        sizes="(min-width: 768px) 620px, 100vw"
+        class="h-full max-h-[300px] w-full object-cover"
+      />
+    </a>
+  </Container>
+</BaseLayout>
